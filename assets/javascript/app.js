@@ -3,35 +3,102 @@ var incorrect = 0;
 var unanswered = 0;
 
 var questionsLeft = 7;
-var timeLeft = 15;
+var timeLeft = 10;
 
-var multiChoices = [
-    ["Billy Joel Cat", "Keyboard Cat", "Piano Cat"],
-    ["Doge","Doggo","Shiba Pupper"],
-    ["I can haz cheeseburger?", "I can has cheezburger?", "I can has cheeseburger?"],
-    ["..and that's the tea, sis!", "Me & Also Me", "..but that's none of my business"],
-    ["Success Kid", "Determined Kid", "Yes Kid"],
-    ["Railroad Cat", "Train Cat", "Monorail Cat"],
-    ["Sunic", "Sanic", "s o n i c c"]
-];
+var currentQuestion = 0;
+
+var memeQuestions = [
+{
+    image: "assets/images/keyboardcat.gif",
+    choices:["Billy Joel Cat", "Keyboard Cat", "Piano Cat"],
+    answer:1  
+},
+{
+  image: "assets/images/doge.jpg",
+  choices:["Doge","Doggo","Shiba Pupper"],
+  answer:0  
+},
+{
+  image: "assets/images/icanhascheezburger.jpg",
+  choices:["I can haz cheeseburger?", "I can has cheezburger?", "I can has cheeseburger?"],
+  answer:1  
+},
+{
+  image: "assets/images/thatsnoneofmybusiness.jpg",
+  choices:["...and that's the tea, sis!", "Me & Also Me", "...but that's none of my business"],
+  answer:2  
+},
+{
+  image: "assets/images/successkid.png",
+  choices:["Success Kid", "Determined Kid", "Yes Kid"],
+  answer:0  
+},
+{
+  image: "assets/images/monorailcat.jpg",
+  choices:["Railroad Cat", "Train Cat", "Monorail Cat"],
+  answer:2  
+},
+{
+  image: "assets/images/sanic.jpg",
+  choices:["Sunic", "Sanic", "s o n i c c"],
+  answer:1  
+},
+]
 
 $("#start-button").on("click", function() {
-nextQuestion();
-answerbutton();
-$("answers")
+  $("#start-question").html("What does this meme?");
+  var imageTag = $("<img>");
+  imageTag.attr("src", memeQuestions[currentQuestion].image);
+  $("#meme-image").append(imageTag);
+  answerButtons();
+  timmerStart();
+  // setTimeout(function() {
+  //   setInterval(function(){
+  //     timeLeft--}, 1000);
+  //     //go to the next question when time is 0
+  //     // if/else
+  //     console.log('xx');
+  // }, 15000);
 });
 
-  function nextQuestion() {
+  function timmerStart() {
     setTimeout(function() {
-        setInterval(function(){
-            timeLeft--}, 1000);
-            
-      }, 15000);
-    $("#start-question").html("What does this meme?");
-  };
+      // action
+      console.log("didn't answer in time");
+      incorrect++;
+      nextQuestion();
+      }, 10000);
+  //   setInterval(function(){
+  //     timeLeft--;
+  //   console.log('interval');
+  // }, 1000);
+  //   $("#start-question").html("What does this meme?");
+  //   answerButtons();
+  //   timmerStart();
+  // };
+
+  $(".answerButton").on("click", function() {
+    //TODO: check if they got it right or wrong
+    nextQuestion();
+  });
+
+  function nextQuestion() {
+    currentQuestion++;
+    var imageTag = $("<img>");
+    imageTag.attr("src", memeQuestions[currentQuestion].image);
+    $("#meme-image").append(imageTag);
+    answerButtons();
+    timmerStart();
+  }
 
   function answerButtons() {
-    $("<button>" + multiChoices.[0][0] + "</button>")
+    memeQuestions[currentQuestion].choices.forEach(function(element) {
+      console.log(element);
+      var createButton = $("<button>");
+      createButton.addClass("answer-button");
+      createButton.html(element);
+      $("#multi-choices").append(createButton);
+    });
   };
 
   //Player clicks start button 
