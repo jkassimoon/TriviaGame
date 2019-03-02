@@ -1,0 +1,13 @@
+body {
+    background-color: greenyellow;
+    text-align: center;
+    font-family: cursive;
+}
+
+img {
+    width:120px;
+}
+
+#divBox {
+    margin-top:50px;
+}
