@@ -22,7 +22,10 @@
 
     * JavaScript Below
 
-    ![Screenshot of JavaScript](/assets/images/trivia-js.jpg "Screenshot of JavaScript")
+    ![Screenshot of JavaScript](/assets/images/trivia-js1.jpg "Screenshot of JavaScript")
+    ![Screenshot of JavaScript](/assets/images/trivia-js2.jpg "Screenshot of JavaScript")
+    ![Screenshot of JavaScript](/assets/images/trivia-js3.jpg "Screenshot of JavaScript")
+    ![Screenshot of JavaScript](/assets/images/trivia-js4.jpg "Screenshot of JavaScript")
         
   * ## Gif Walkthrough of App Functioning 
     

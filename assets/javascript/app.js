@@ -124,11 +124,11 @@ function answerButtons() {
 function endGame() {
   var endText = '';
   if (incorrect === 0) {
-    endText = 'flawless victory';
+    endText = 'Perfect! A++';
   } else if (correct > incorrect) {
-    endText = 'not bad';
+    endText = 'You did alright.';
   } else {
-    endText = 'you lose';
+    endText = 'You bring great dishonor.';
   }
   $("#start-question").html(endText);
   inGame = false;
@@ -151,3 +151,4 @@ function endGame() {
   //if user selects an incorrect answer or exhausts all 15 seconds,then it increases incorrect counter by 1pt and it moves on to question #2
   //when user finishes question 7, (the questions left counter turns 0) then the screen displays final stats.
   //user can click restart with the restart button.
+  
