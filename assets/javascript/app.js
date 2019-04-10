@@ -1,6 +1,5 @@
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0;
 
 var questionsLeft = 7;
 var timeLeft = 10;
@@ -62,8 +61,8 @@ $("#start-button").on("click", function () {
 
   $("#start-button").hide();
   $("#time-left").show()
-  $("#correct-counter").html(correct);
-  $("#incorrect-counter").html(incorrect);
+  $("#correct-counter").html("correct: " + correct);
+  $("#incorrect-counter").html("incorrect: " + incorrect);
 });
 
 
@@ -82,8 +81,8 @@ function myTimer() {
 }
 
 function nextQuestion() {
-  $("#correct-counter").html(correct);
-  $("#incorrect-counter").html(incorrect);
+  $("#correct-counter").html("correct: " + correct);
+  $("#incorrect-counter").html("incorrect: " + incorrect);
 
   currentQuestion++;
   timeLeft = 10;
@@ -134,7 +133,6 @@ function endGame() {
   inGame = false;
   correct = 0;
   incorrect = 0;
-  unanswered = 0;
   currentQuestion = 0;
   questionsLeft = 7;
   timeLeft = 10;
@@ -148,7 +146,7 @@ function endGame() {
   //start button disappears & question #1 displays
   //user has 15 seconds to answer, decrease 1 second from counter every second.
   //if user selects a correct answer then increase correct counter by 1pt and move on to question #2
-  //if user selects an incorrect answer or exhausts all 15 seconds,then it increases incorrect counter by 1pt and it moves on to question #2
+  //if user selects an incorrect answer or exhausts all 10 seconds,then it increases incorrect counter by 1pt and it moves on to question #2
   //when user finishes question 7, (the questions left counter turns 0) then the screen displays final stats.
   //user can click restart with the restart button.
   

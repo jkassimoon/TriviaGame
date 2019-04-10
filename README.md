@@ -5,7 +5,7 @@
     
     For this project, the player has to guess the names of some really old internet memes. Clicking "do you know da wey?" button will start the game. 
     
-    The player will then be shown a photo of a meme and is given (3) multiple choice answers to select within (10) seconds. If the player answers the question, next meme will display, regardless of whether it was a correct answer or not, and regardless of 10 seconds timed out or not. If the player did select a correct answer, the correct answer counter will go up. If the player selected an incorrect answer, the incorrect answer counter will go up. If no answer was selected and all 10 seconds passed, the unanswered question counter will go up. There are 7 questions total.
+    The player will then be shown a photo of a meme and is given (3) multiple choice answers to select within (10) seconds. If the player answers the question, next meme will display, regardless of whether it was a correct answer or not, and regardless of 10 seconds timed out or not. If the player did select a correct answer, the correct answer counter will go up. If the player selected an incorrect answer, the incorrect answer counter will go up. If no answer was selected and all 10 seconds passed, the incorrect question counter will go up. There are 7 questions total.
   
   * ## Technologies Used
 
